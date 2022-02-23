@@ -1,61 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 body {
-    background: linear-gradient(#fcdfac, #11677c);
-    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to left, #f7de8a, #0d2724);
+    font-family: Roboto;
     font-weight: 400;
-    color: #08313b;
+    color: black;
+    height: 100vh;
 }
 main {
-    margin: 20px auto;
-    width: 380px;
-}
-main h1 {
-    font-weight: 600;
-    text-align: center;
-    padding-bottom: 8px;
-    border-bottom: 4px solid #08313b;
-}
-main nav.menu {
-    list-style: none;
-}
-main nav.menu li a:link,
-main nav.menu li a:visited {
-    background-color: #08313b;
-    border: 4px solid #08313b;
-    border-radius: 0px 6px 30px 0px;
-    display: block;
-    color: #fcdfac;
-    margin-bottom: 16px;
-    padding: 10px;
-    position: relative;
-    text-decoration: none;
-    text-indent: 46px;
-    transition: all 0.5s ease-in;
-}
-main nav.menu li a span {
-    background-color: #11677c;
-    border-radius: 50%;
-    border: 4px solid #08313b;
-    color: #fcdfac;
-    font-weight: 600;
-    font-size: 1.6rem;
-    display: block;
+    border-radius: 6px;
     padding: 20px;
+}
+main header h1 {
+    background-color: #000000;
+    border-radius: 6px;
+    color: #fcdfac;
+    padding: 20px;
+    position: relative;
+    margin-top: 0;
+    text-align: center;
+}
+main header h1 a:link,
+main header h1 a:visited {
+    text-decoration: none;
+    display: block;
     position: absolute;
-    height: 20px;
-    width: 20px;
-    line-height: 1.6rem;
-    top: -10px; left: -18px;
-    text-indent: -6px;
-    transition: all 0.5s ease-in;
+    transition: all 0.2s ease-in;
 }
-main nav.menu li a:hover {
-    color: #fff;
-    text-indent: 56px;
+main header h1 a:hover {
+    transform: translateX(-6px);
 }
-main nav.menu li a:hover span {
-    background-color: #fff;
-    color: #08313b;
-    transform: rotate(360deg);
+main section h2 {
+    border-bottom: 2px solid black;
+    text-align: center;
+    font-size: 1.4rem;
+    padding-bottom: 10px;
+
 }
