@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Get Element(s)</title>
     <link rel="stylesheet" href="css/menu.css">
+    <style>
+        p {
+            padding-left: 20px;
+        }
+        button {
+            margin-top: 28px;
+            border: none;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
     <main>
@@ -25,18 +35,34 @@
             <li>Charmander</li>
         </ul>
         <h3 id="nli"></h3>
+        <p class="paragraph">Lorem ipsum dolor</p>
+        <p class="paragraph">Lorem ipsum dolor</p>
+        <p class="paragraph">Lorem ipsum dolor</p>
+        <h3 id="np"></h3>
+        <button class="btn">Button 1</Button>
+        <button class="btn">Button 2</Button>
+        <button class="btn">Button 3</Button>
         </section>
     </main>
     <script>
         // getElementById
         let year = document.getElementsById('year')
         let nli = document.getElementsById('nli')
+        let np  = document.getElementById('np')
         let ndate = new Date
         year.innerText ='Current Year: \n' + ndate.getFullYear()
         let lis= document.getElementsByTagName('li')
         nli.innerText = 'There are ' + lis.length + 
                         'list elements \n' + 'Last element value is:' +
                         lis[lis.leight+1], textContent
+        let nps = document.getElementsByClassName('paragraph')
+        nps[nps.length-1].style.color = '#aa0'
+        np.innerText = 'There are : ' + nps.length +
+                       '<p> with class paragraph'
+        let btn = document.querySelector('button.first')
+        let btns = document.querySelectorAll('button.btn')
+        btn.style.marginleft = '120px'
+        btns[1].style.backgroundColor='#aa0'
     </script>
 </body>
 </html>
