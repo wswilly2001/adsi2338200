@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Calculator </title>
+    <link rel="stylesheet" href="css/menu.css">
+    <style>
+        header h1{
+            font-size: 1.6rem;
+            line-height: 3.8rem;
+        }
+        div.calculator{
+            margin: 40px auto;
+            width: 324px;
+        }
+        header display {
+            background: url(images/calc/display.svg) no-repeat;
+            height: 70px;
+            position: relative;
+            width:  324px;
+        }
+        header.display em value {
+            color: #C6E257;
+            font-family: poppins;
+            font-size: 20px;
+            font-style: normal;
+            position: absolute;
+            text-align: right;
+            right: 10px;
+            top: 24px;
+        }
+        section.buttons{
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(62px,1fr));
+            row-gap: 10px;
+            column-gap: 8px;
+            margin: 10px 0;
+        }
+        section.buttons button{
+            border: none;
+            height:62px;
+            width: 62px;
+        }
+        button.btn-delete{
+            background:url(images/calc/btn-delete.svg);
+        }
+        button.btn-group{
+            background:url(images/calc/btn-group.svg);
+        }
+        button.btn-proc{
+            background:url(images/calc/btn-proc.svg);
+        }
+        button.btn-percentaje{
+            background:url(images/calc/btn-percentaje.svg);
+        }
+        button.btn-7{
+            background:url(images/calc/7.svg);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <a href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
+                  </svg>
+            </a>
+            <h1>Challenge Calculator</h1>
+        </header>
+        <section>
+            <div class="Calculator">
+                <header class="display">
+                    <input type="text" class="value" readonly>
+                </header>
+                <section class="bottoms">
+                <button class="btn-delete"></button>
+                <button class="btn-group"></button>
+                <button class="btn-proc"></button>
+                <button class="btn-percentaje"></button>
+                <button class="btn-7"></button>
+                <button class="btn-8"></button>
+                <button class="btn-9"></button>
+                <button class="btn-multi"></button>
+                <button class="btn-4"></button>
+                <button class="btn-5"></button>
+                <button class="btn-6"></button>
+                <button class="btn-rest"></button>
+                <button class="btn-1"></button>
+                <button class="btn-2"></button>
+                <button class="btn-3"></button>
+                <button class="btn-sum"></button>
+                <button class="btn-div"></button>
+                <button class="btn-0"></button>
+                <button class="btn-point"></button>
+                <button class="btn-result"></button>
+            </div>
+        </section>
+    </main>
+    <script>
+        const dispValue = document.querySelector('imput.value')
+        const btnClear = document.querySelector('button.btn-clear')
+        const btnBack = document.querySelector('button.btn-back')
+        btn1.onclick= () => {
+            disValue.innerText += '1'
+        }
+        btn2.onclick= () => {
+            disValue.innerText += '2'
+        }
+        btn3.onclick= () => {
+            disValue.innerText += '3'
+        }
+        btn4.onclick= () => {
+            disValue.innerText += '4'
+        }
+        btn5.onclick= () => {
+            disValue.innerText += '5'
+        }
+        btn6.onclick= () => {
+            disValue.innerText += '6'
+        }
+        btn7.onclick= () => {
+            disValue.innerText += '7'
+        }
+        btn8.onclick= () => {
+            disValue.innerText += '8'
+        }
+        btn9.onclick= () => {
+            disValue.innerText += '9'
+        }
+        btn0.onclick= () => {
+            disValue.innerText += '0'
+        }
+        btnClear.onclick = () => {
+            disvalue.innerText = ''
+        }
+    </script>     
+</body>
+</html>
