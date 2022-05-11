@@ -78,64 +78,118 @@
                 <section class="bottoms">
                 <button class="btn-delete"></button>
                 <button class="btn-group"></button>
-                <button class="btn-proc"></button>
-                <button class="btn-percentaje"></button>
-                <button class="btn-7"></button>
-                <button class="btn-8"></button>
-                <button class="btn-9"></button>
-                <button class="btn-multi"></button>
-                <button class="btn-4"></button>
-                <button class="btn-5"></button>
-                <button class="btn-6"></button>
-                <button class="btn-rest"></button>
-                <button class="btn-1"></button>
-                <button class="btn-2"></button>
-                <button class="btn-3"></button>
-                <button class="btn-sum"></button>
-                <button class="btn-div"></button>
-                <button class="btn-0"></button>
-                <button class="btn-point"></button>
+                <button class="btn-proc"data-opr="^"></button>
+                <button class="btn-percentaje"data-opr="%"></button>
+                <button class="btn-7" data-opr="7"></button>
+                <button class="btn-8" data-opr="8"></button>
+                <button class="btn-9" data-opr="9"></button>
+                <button class="btn-multi" data-opr="*"></button>
+                <button class="btn-4" data-opr="4"></button>
+                <button class="btn-5" data-opr="5"></button>
+                <button class="btn-6" data-opr="6"></button>
+                <button class="btn-rest" data-opr="-"></button>
+                <button class="btn-1" data-opr="1"></button>
+                <button class="btn-2" data-opr="2"></button>
+                <button class="btn-3" data-opr="3"></button>
+                <button class="btn-sum" data-opr="+"></button>
+                <button class="btn-div" data-opr="7"></button>
+                <button class="btn-0" data-opr="0"></button>
+                <button class="btn-point" data-opr="."></button>
                 <button class="btn-result"></button>
             </div>
         </section>
     </main>
     <script>
-        const dispValue = document.querySelector('imput.value')
+        const display = document.querySelector('imput.value')
         const btnClear = document.querySelector('button.btn-clear')
         const btnBack = document.querySelector('button.btn-back')
-        btn1.onclick= () => {
-            disValue.innerText += '1'
+        const btnEqual = document.querySelector('button.btn-equal')
+        const btnnumbers = document.querySelectorAll('button[data-num]')
+        const btnOperations = document.querySelectorAll('button[data-opr]')
+        var operstatus = false
+        for (let i = 0; i < btnsnumbers.length; i++) {
+            btnsnumbers[i].  onclick = function() {
+                operstatus = true
+                addtoDisplay(this.getAttribute('data.num'))
+            }
+            
         }
-        btn2.onclick= () => {
-            disValue.innerText += '2'
+        for (let i = 0; i < btnOperations.length; i++) {
+            btnOperations[i]. onclick = function() {
+                if(operstatus) {
+                addtoDisplay(this.getAttribute('data.opr'))
+                 operstatus = true
+                }
+            }
+            
         }
-        btn3.onclick= () => {
-            disValue.innerText += '3'
-        }
-        btn4.onclick= () => {
-            disValue.innerText += '4'
-        }
-        btn5.onclick= () => {
-            disValue.innerText += '5'
-        }
-        btn6.onclick= () => {
-            disValue.innerText += '6'
-        }
-        btn7.onclick= () => {
-            disValue.innerText += '7'
-        }
-        btn8.onclick= () => {
-            disValue.innerText += '8'
-        }
-        btn9.onclick= () => {
-            disValue.innerText += '9'
-        }
-        btn0.onclick= () => {
-            disValue.innerText += '0'
+        document.onkeup = (evt) => {
+               switch (key) {
+                   case 48:
+                       addtoDisplay(0)
+                       break;
+                       case 49:
+                       addtoDisplay(1)
+                       break;
+                       case 50:
+                       addtoDisplay(2)
+                       break;
+                       case 51:
+                       addtoDisplay(3)
+                       break;
+                       case 52:
+                       addtoDisplay(4)
+                       break;
+                       case 53:
+                       addtoDisplay(5)
+                       break;
+                       case 54:
+                       addtoDisplay(6)
+                       break;
+                       case 55:
+                       addtoDisplay(7)
+                       break;
+                       case 56:
+                       addtoDisplay(8)
+                       break;
+                       case 57:
+                       addtoDisplay(9)
+                       break;
+                    default:
+               }
         }
         btnClear.onclick = () => {
-            disvalue.innerText = ''
+            display.value = ''
+            operstatus = false
         }
+        function cleardisplay() {
+            display.value=''
+            operstatus = false
+        }
+        btnBack.onclick = () => {
+            deletelastvalue()
+        }
+        function deletelastvalue(){
+            display.value = display.value.slice(0, -1)
+            if(isNan(display.value.slice(-1))) {
+                operstatus = false
+            } else {
+                operstatus= true
+            }
+        }
+        function addtoDisplay(c){
+            if(validatelenght()){
+                display.value += c
+            }
+        }
+        function validatelenght(){
+            if(display.value.leigh < 36) {
+                return true
+            } else {
+                return false
+            }
+        }
+        
     </script>     
 </body>
 </html>
